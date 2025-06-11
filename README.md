@@ -3,6 +3,7 @@
 This Project utilises SQL Queries and two Tableau Dashboards for analysis full‐stack sales analytics problem that demonstrates data ingestion, transformation, and visualization and dives into customer, transaction, market and date tables to compute rich KPIs and build interactive dashboards.
 
 ---
+## Two Tableau Dashboard workbook: https://public.tableau.com/views/SalesInsightsProjectPhase2/Dashboard1_1?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ## Project Overview
 
