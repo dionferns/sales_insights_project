@@ -1,6 +1,6 @@
 # Sales Analytics & Reporting
 
-This Project utilises SQL Queries and two Tableau Dashboards for analysis full‐stack sales analytics problem that demonstrates data ingestion, transformation, and visualization and dives into customer, transaction, market and date tables to compute rich KPIs and build interactive dashboards.
+This Project utilises SQL Queries and two Tableau Dashboards to analyse full‐stack sales or a company. This project demonstrates data ingestion, transformation, and visualization and dives into customer, transaction, market and date tables to compute rich KPIs and build interactive dashboards.
 
 ---
 ## Two Tableau Dashboard workbook: 
