@@ -1,30 +1,53 @@
-# Sales Analytics Dashboard
+# Sales Analytics & Reporting
 
-This project is about comprehensive sales analytics solution built with SQL and Tableau, providing insights into revenue, profit, and sales trends across multiple markets and time periods for a company.
+A full‐stack sales analytics project that demonstrates data ingestion, transformation, and visualization using SQL and Tableau. Dive into customer, transaction, market and date tables to compute rich KPIs and build interactive dashboards.
 
 ---
 
 ## Project Overview
 
-This project demonstrates end-to-end sales analytics by:
+This repository contains:
 
-- Storing transactional data in a relational database  
-- Writing SQL queries to extract and aggregate key metrics  
-- Building an interactive Tableau dashboard to visualize revenue, profit, and sales quantities by market, customer, and product  
-
-By leveraging both SQL and Tableau, stakeholders can explore performance trends over time, compare markets, and drill into the details of individual transactions.
+- **Relational schema** for customers, markets, products, transactions and a date dimension  
+- **Advanced SQL queries** (CTEs, window functions, pivots) to compute revenue trends, profitability, rolling averages and market-share  
+- **Two Tableau workbooks** showcasing interactive dashboards with KPIs, time-series, bar charts, drill-downs and filter controls  
 
 ---
 
-## Data Model
+## Schema & Tables
 
-Two primary tables:
+## Schema & Tables
 
-1. **`customers`**  
-   - Contains customer master records (e.g. `customer_id`, `customer_name`, `segment`).  
+```
+customers
+├─ customer_code    (PK)
+├─ customer_name
+└─ customer_type
 
-2. **`transactions`**  
-   - Contains each sales order (e.g. `order_id`, `order_date`, `market_code`, `product_code`, `sales_amount`, `currency`).  
+markets
+├─ markets_code     (PK)
+├─ markets_name
+└─ zone
 
-3. **`date`**  
-   - A date dimension table used to enrich transactions with calendar attributes (`date`, `year`, `month_name`, etc.).
+products
+├─ product_code     (PK)
+└─ product_type
+
+date
+├─ date             (PK, YYYY-MM-DD)
+├─ cy_date          (datetime)
+├─ year             (INT)
+├─ month_name       (VARCHAR)
+└─ date_yy_mmm      (VARCHAR, e.g. '20-Jun')
+
+transactions
+├─ product_code     (FK → products.product_code)
+├─ customer_code    (FK → customers.customer_code)
+├─ market_code      (FK → markets.markets_code)
+├─ order_date       (FK → date.date)
+├─ sales_qty
+├─ sales_amount
+├─ currency
+├─ cost_price
+├─ profit_margin    (DECIMAL)
+└─ profit_margin_%  (DECIMAL)```
